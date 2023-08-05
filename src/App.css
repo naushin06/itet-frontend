@@ -1,0 +1,351 @@
+/* Assuming you have already set up the font-awesome icons and imported the required stylesheets*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+/* Styles for the taskbar container */
+
+*{
+  font-family: 'Quicksand', sans-serif;
+}
+
+   .taskbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  padding: 12px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 0px;
+} 
+
+/* Styles for the taskbar buttons */
+.taskbar-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.taskbar-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-3px);
+}
+
+/* Styles for the font-awesome icons */
+.taskbar-button i {
+  font-size: 24px;
+  color: #667eea;
+  margin-right: 10px;
+}
+
+/* Styles for the button text */
+.taskbar-span {
+  color: #667eea;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+
+
+
+
+/* form-styles*/
+
+/* Styles for the container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  margin: 50px auto 0; /* Added more space on top */
+}
+
+/* Styles for the form labels */
+.form-label {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/* Styles for the form inputs */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s ease; /* Added cool transition */
+}
+
+/* Styles for the input type date and time */
+input[type="date"],
+input[type="time"] {
+  background-color: #ffffff;
+  color: #667eea;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease; /* Added cool transition */
+}
+
+/* Styles for the submit button */
+.form-button {
+  background-color: #ffffff;
+  color: #667eea;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-3px);
+}@media (max-width: 767px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .form-label {
+    font-size: 12px;
+  }
+
+  .form-input,
+  input[type="date"],
+  input[type="time"],
+  .form-button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+/* Media query for tablets (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 60%; /* Adjusted width for tablets */
+  }
+
+  .form-label {
+    font-size: 14px; /* Keeping a slightly larger font-size for tablets */
+  }
+
+  .form-input,
+  input[type="date"],
+  input[type="time"],
+  .form-button {
+    font-size: 14px;
+    padding: 10px; /* Slightly larger padding for tablets */
+  }
+}
+
+
+
+
+
+
+
+/* list styles  */
+
+/* Styles for the event list container */
+.link-container {
+  display: flex;
+  align-items: center;
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px; /* Add space at the top */
+}
+
+/* Styles for each event link */
+.event-link {
+  display: inline-block; 
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  color: #667eea;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.event-link-false{
+  display: inline-block; 
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  color: #800020;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.event-link:hover {
+  background-color: #667eea;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.event-link-false:hover{
+  background-color: #800020;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+/* Styles for the event text */
+.event-p {
+  margin: 0;
+  padding: 0;
+  flex: 1; /* Make all elements take equal space */
+}
+/*delete container one*/
+.delete-container {
+  display: flex;
+  align-items: center;
+  margin-left: 10px; /* Add some space between the link and the button */
+  border-radius: 50%;
+  background-color: #FF2171;
+  padding: 5px;
+  margin: 0px;
+  margin-bottom: 5%;
+  margin-left: 2%;
+}
+/* Styles for the delete button */
+.delete-btn {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCAEAE; /* Set the background color */
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%; /* Make the button round */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: #FCAEAE 0.3s ease, transform 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #FF6666; /* Update the hover color */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px #FF6666;
+}
+/* Media query for responsiveness (adjust the breakpoint as needed) */
+@media (max-width: 768px) {
+  .event-link {
+    width: 100%;
+  }
+}
+
+
+/* this is the css for the table ... */
+
+/* Styles for the table container */
+div {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.actual-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Styles for the table */
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  background: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.todo-tablehead,
+.todo-bodyrow {
+  background: #f2f2f2;
+  color: #333333;
+  font-weight: bold;
+}
+
+.todo-head,
+.todo-bodydata {
+  padding: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.todo-bodyinput {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ededed;
+}
+
+/* Styles for the save button */
+.save-all-button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(to right, #667eea, #f9c27b);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.save-all-button:hover {
+  background: linear-gradient(to right, #f9c27b, #667eea);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#green{
+color: #1A5D1A;
+}
+#blue{
+  color: navy;
+}
+#grey{
+  color:#3F2305
+}
+#red{
+  color: crimson;
+}
