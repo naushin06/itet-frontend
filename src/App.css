@@ -270,7 +270,7 @@ input[type="time"] {
 /* this is the css for the table ... */
 
 /* Styles for the table container */
-div {
+.table-todo {
   text-align: center;
   margin-top: 30px;
 }
@@ -282,10 +282,8 @@ div {
 }
 
 /* Styles for the table */
-.todo-table {
+#todo-table {
   width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
   text-align: center;
   background: #f7f7f7;
   border-radius: 10px;
@@ -308,7 +306,6 @@ div {
 }
 
 .todo-bodyinput {
-  width: 100%;
   padding: 8px;
   border: none;
   border-radius: 5px;
@@ -337,15 +334,53 @@ div {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .todo-head,
+  .todo-bodydata {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .todo-bodyrow {
+    background: #f7f7f7;
+  }
+
+  /* Scrollable content on mobile */
+  .todo-table td {
+    white-space: nowrap;
+  }
+
+  /* Fixed first column */
+  .todo-table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #f2f2f2;
+    z-index: 2;
+    color: #333333; /* Adjust font color for text visibility */
+  }
+
+  /* Scrollable other columns on mobile */
+
+  
+  /* Equal spacing for columns */
+  .todo-table {
+    display: grid;
+    grid-template-columns: auto repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+
 #green{
-color: #1A5D1A;
-}
-#blue{
-  color: navy;
-}
-#grey{
-  color:#3F2305
-}
-#red{
-  color: crimson;
-}
+  color: #1A5D1A;
+  }
+  #blue{
+    color: navy;
+  }
+  #grey{
+    color:#3F2305
+  }
+  #red{
+    color: crimson;
+  }
+  

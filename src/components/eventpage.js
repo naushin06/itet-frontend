@@ -357,10 +357,10 @@ for (let key in updateData) {
   ];
 
   return (
-    <div>
+    <div className="table">
 <p className="actual-name" > {actualname} </p> 
-     <div>
-        <table className="todo-table">
+     <div class="table-responsive">
+        <table className="table" id="todo-table">
           <thead className="todo-tablehead">
            <tr className="todo-headrow">
               <th className="todo-head">Event</th>
@@ -422,8 +422,8 @@ if(updatedstatus){
           />
         </td>
         <td  className="todo-bodydata">{updatedeadline}</td>
-        <td className="todo-bodyinput">
-          <select className="todo-bodyinput"
+        <td className="todo-bodyinput" >
+          <select className="todo-bodyinput" id="todo-status"
             name={status} // Added "status" to the name to differentiate from the other input
             onChange={(e) => setData({ ...data, [e.target.name]: e.target.value })}
           >
