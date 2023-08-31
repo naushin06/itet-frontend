@@ -32,12 +32,12 @@ const events=[
 
 const fdateconversion=(item)=>{
     const dateString = item;
-// Split the string into an array using comma as the delimiter
-const fruitsArray = dateString.split('-');
-const month =parseInt(fruitsArray[1])-1
-const m=month.toString()
-const fdate=new Date(fruitsArray[0],m,fruitsArray[2])
-return fdate
+    // Split the string into an array using comma as the delimiter
+    const fruitsArray = dateString.split('-');
+    const month =parseInt(fruitsArray[1])-1
+    const m=month.toString()
+    const fdate=new Date(fruitsArray[0],m,fruitsArray[2])
+    return fdate
 }
 
 
@@ -47,19 +47,25 @@ const tdateconversion=(item)=>{
 const fruitsArray = dateString.split('-');
 const month =parseInt(fruitsArray[1])-1
 const m=month.toString()
-const tdate=new Date(fruitsArray[0],m,fruitsArray[2])
+console.log(fruitsArray);
+const date=parseInt(fruitsArray[2])+1
+const d=date.toString()
+const tdate=new Date(fruitsArray[0],m,d)
 return tdate
 }
 
 const [eventName, setEventName] = useState([]);
 
 const eventHandler = (event) => {
+    console.log(event);
   event.forEach((item) => {
     const name = item.name;
+    console.log(item);
     const fdate = fdateconversion(item.fdate);
     const tdate= tdateconversion(item.tdate);
     console.log(fdate);
     console.log(tdate);
+
     const newEvent = {
       title: name,
       start:fdate,

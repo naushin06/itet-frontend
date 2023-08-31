@@ -148,104 +148,174 @@
 
 // export default TASKPAGE;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useState,useEffect } from 'react'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const TASKPAGE = () => {
-const navigate=useNavigate()
- const [events,setEvents]=useState([{name:'',fdate:'',ftime:'',tdate:'',ttime:'',tname:'',desc:''}])
- const [details,setDetails]=useState({name:'',fdate:'',ftime:'',tdate:'',ttime:'',tname:'',desc:'',})
+  const navigate = useNavigate();
+  const [events, setEvents] = useState([
+    {
+      name: "",
+      fdate: "",
+      ftime: "",
+      tdate: "",
+      ttime: "",
+      tname: "",
+      desc: "",
+    },
+  ]);
+  const [details, setDetails] = useState({
+    name: "",
+    fdate: "",
+    ftime: "",
+    tdate: "",
+    ttime: "",
+    tname: "",
+    desc: "",
+    mode:""
+  });
 
 
-function submitHander(){
-    if(details.name && details.fdate && details.tdate && details.ttime && details.ftime && details.desc && details.tname !==''){
-      console.log(details)
+    const selectHandler = (event) => {
+console.log(event.target.value);
+console.log(event.target.name);
+     
+    };
+  
 
-      try{
-        axios.post('https://itet-backend-em.onrender.com/create',details).then(()=>{
-        console.log("event added")
-      alert('event added')
-      });
-      }
-      catch(err){
+  function submitHandler() {
+    if (
+      details.name &&
+      details.fdate &&
+      details.tdate &&
+      details.ttime &&
+      details.ftime &&
+      details.desc &&
+      details.tname &&
+      details.mode !== ""
+    ) {
+      console.log(details);
+
+      try {
+        axios
+          .post("https://itet-backend-em.onrender.com/create", details)
+          .then(() => {
+            console.log("event added");
+            alert("event added");
+          });
+      } catch (err) {
         console.log(err.message);
       }
     }
-}
+  }
   return (
     <>
+      <form className="container">
+        <label className="form-label">EVENT-NAME</label>
+        <input
+          className="form-input"
+          onChange={(e) =>
+            setDetails({ ...details, [e.target.name]: e.target.value })
+          }
+          type="name"
+          name="name"
+          value={details.name}
+          required
+          placeholder="name"
+        />
 
-    <form className='container'>
-    <label className='form-label'>EVENT-NAME</label>
-    <input className='form-input'   onChange={(e) =>
-              setDetails({ ...details, [e.target.name]: e.target.value })
-            } type="name"  name="name" value={details.name} required placeholder='name' />
+        <label className="form-label">DATE-FROM</label>
 
-    <label className='form-label'>DATE-FROM</label>
+        <input
+          className="form-input"
+          onChange={(e) =>
+            setDetails({ ...details, [e.target.name]: e.target.value })
+          }
+          type="date"
+          name="fdate"
+          value={details.fdate}
+          required
+          placeholder="from-date"
+        />
 
-    <input className='form-input'   onChange={(e) =>
-              setDetails({ ...details, [e.target.name]: e.target.value })
-            } type="date" name="fdate" value={details.fdate} required placeholder='from-date' />
+        <input
+          className="form-input"
+          onChange={(e) =>
+            setDetails({ ...details, [e.target.name]: e.target.value })
+          }
+          type="time"
+          name="ftime"
+          value={details.ftime}
+          required
+          placeholder="from-time"
+        />
 
-    <input className='form-input'  onChange={(e) =>
-              setDetails({ ...details, [e.target.name]: e.target.value })
-            } type="time" name="ftime" value={details.ftime} required placeholder='from-time' />
+        <label className="form-label">DATE-TO</label>
 
-    <label className='form-label' >DATE-TO</label>
+        <input
+          className="form-input"
+          onChange={(e) =>
+            setDetails({ ...details, [e.target.name]: e.target.value })
+          }
+          type="date"
+          name="tdate"
+          value={details.tdate}
+          required
+          placeholder="to-date"
+        />
 
-    <input className='form-input' onChange={(e) =>
-              setDetails({ ...details, [e.target.name]: e.target.value })
-            } type="date" name="tdate" value={details.tdate} required placeholder='to-date' />
+        <input
+          className="form-input"
+          onChange={(e) =>
+            setDetails({ ...details, [e.target.name]: e.target.value })
+          }
+          type="time"
+          name="ttime"
+          value={details.ttime}
+          required
+          placeholder="to-time"
+        />
 
-    <input  className='form-input' onChange={(e) =>
-              setDetails({ ...details, [e.target.name]: e.target.value })
-            } type="time" name="ttime" value={details.ttime} required placeholder='to-time' />
+        <label className="form-label">Trainer-Name</label>
+        <input
+          className="form-input"
+          onChange={(e) =>
+            setDetails({ ...details, [e.target.name]: e.target.value })
+          }
+          type="text"
+          name="tname"
+          value={details.tname}
+          required
+          placeholder="trainer-name"
+        />
+        <label className="form-label">DESC</label>
+        <input
+          className="form-input"
+          onChange={(e) =>
+            setDetails({ ...details, [e.target.name]: e.target.value })
+          }
+          type="text"
+          name="desc"
+          value={details.desc}
+          required
+          placeholder="EVENT-DESC"
+        />
 
-    <label className='form-label'>Trainer-Name</label>
-    <input   className='form-input' onChange={(e) =>
-              setDetails({ ...details, [e.target.name]: e.target.value })
-            }  type="text" name="tname" value={details.tname} required placeholder='trainer-name' />
-    <label className='form-label'>DESC</label>
-    <input  className='form-input'onChange={(e) =>
-              setDetails({ ...details, [e.target.name]: e.target.value })
-            }  type="text" name="desc" value={details.desc} required placeholder='EVENT-DESC' />
-    <button className='form-button' type='submit' onClick={submitHander}>SUBMIT-BUTTON</button>
-    </form>
+        <select name="mode" 
+        onChange={(e)=>{setDetails({ ...details, [e.target.name]: e.target.value });selectHandler(e)}}
+        required>
+          <option value="Event">Event</option>
+          <option value="Office">Office</option>
+        </select>
 
-           {/* <div>
+        <button className="form-button" type="submit" onClick={submitHandler}>
+          SUBMIT-BUTTON
+        </button>
+      </form>
+
+      {/* <div>
             {
               events.map((data)=>{
 
@@ -258,7 +328,6 @@ function submitHander(){
             }
            </div> */}
     </>
-
-  )
-}
-export default TASKPAGE
+  );
+};
+export default TASKPAGE;
