@@ -204,6 +204,7 @@ console.log(event.target.name);
           .then(() => {
             console.log("event added");
             alert("event added");
+            console.log(details);
           });
       } catch (err) {
         console.log(err.message);
