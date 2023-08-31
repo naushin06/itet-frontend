@@ -307,6 +307,7 @@ console.log(event.target.name);
         <select name="mode" 
         onChange={(e)=>{setDetails({ ...details, [e.target.name]: e.target.value });selectHandler(e)}}
         required>
+          <option value="">Please Select</option>
           <option value="Event">Event</option>
           <option value="Office">Office</option>
         </select>
