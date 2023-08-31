@@ -16,6 +16,12 @@ const Taskbar = () => {
         <span className='taskbar-span'>EVENTS</span>
       </button>
      </Link>
+     <Link to='/calendar'>
+     <button className="taskbar-button">
+     <i className="fa-regular fa-calendar"></i>
+        <span className='taskbar-span'>CALENDAR</span>
+      </button>
+     </Link>
     </div>
   );
 };

@@ -4,7 +4,7 @@ const EventPages = () => {
   return (
 
 <>
-<div class="table-responsive">
+<div className="table-responsive">
 </div>
 </>
     )

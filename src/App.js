@@ -4,6 +4,7 @@ import TASKPAGE from './components/TASKPAGE';
 import EventPages from './components/eventpage';
 import Eventspage from './components/event2page';
 import Taskbar from './components/taskbar';
+import CalendarPage from './components/Calendar';
 import './App.css';
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
           <Route exact path="/" element={<TASKPAGE />} />
           <Route exact path="/event" element={<Eventspage/>} />
           <Route exact path="/event2" element={<EventPages/>} />
+          <Route exact path='/calendar' element={<CalendarPage/>}></Route>
         </Routes>
       </BrowserRouter>
     </>
