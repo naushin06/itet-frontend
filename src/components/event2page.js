@@ -80,13 +80,3 @@ return (
 
 }
 export default Eventspage
-     // return (
-  //   <div className="event-list">
-  //   {events.map((data, index) => (
-  //     <Link className='event-link' to="/event2" state={{ event: data }} key={index}>
-  //       <p className='event-p' >{data.name} (Trainer: {data.tname})</p>
-  //     </Link>
-  //   ))}
-   
-  // </div>
-  // )
