@@ -6,8 +6,11 @@ const EventPages = () => {
   const location = useLocation();
   const id = location.state.event._id;
   let actualname = location.state.event.name;
-
-
+let fdate=location.state.event.fdate;
+let tdate=location.state.event.tdate
+const desc =location.state.event.desc
+const ftime=location.state.event.ftime
+const ttime=location.state.event.ttime
   const [data, setData] = useState({
     Date: "",
     Datedeadline: "",
@@ -358,7 +361,11 @@ for (let key in updateData) {
 
   return (
     <div className="table">
-<p className="actual-name" > {actualname} </p> 
+<div className="content">
+<p className="actual-name" > {actualname} - ( {desc} ) </p> 
+<p> {fdate} - {tdate} </p>
+<p> {ftime} - {ttime} </p>
+</div>
      <div class="table-responsive">
         <table className="table" id="todo-table">
           <thead className="todo-tablehead">
@@ -401,6 +408,7 @@ if(updatedstatus){
     return (
       <tr className="todo-bodyrow" key={item.id}>
         <td className="todo-bodydata" >{item}</td>
+
         <td  className="todo-bodydata">
           <input className="todo-bodyinput"
             type="text"

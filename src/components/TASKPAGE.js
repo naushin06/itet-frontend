@@ -174,16 +174,13 @@ const TASKPAGE = () => {
     ttime: "",
     tname: "",
     desc: "",
-    mode:""
+    mode: "",
   });
 
-
-    const selectHandler = (event) => {
-console.log(event.target.value);
-console.log(event.target.name);
-     
-    };
-  
+  const selectHandler = (event) => {
+    console.log(event.target.value);
+    console.log(event.target.name);
+  };
 
   function submitHandler() {
     if (
@@ -301,12 +298,18 @@ console.log(event.target.name);
           name="desc"
           value={details.desc}
           required
-          placeholder="EVENT-DESC"
+          placeholder="event-desc"
         />
 
-        <select name="mode" 
-        onChange={(e)=>{setDetails({ ...details, [e.target.name]: e.target.value });selectHandler(e)}}
-        required>
+        <label className="form-label">Mode</label>
+        <select className="form-input"
+          name="mode"
+          onChange={(e) => {
+            setDetails({ ...details, [e.target.name]: e.target.value });
+            selectHandler(e);
+          }}
+          required
+        >
           <option value="">Please Select</option>
           <option value="Event">Event</option>
           <option value="Office">Office</option>

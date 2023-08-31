@@ -1,13 +1,13 @@
 /* Assuming you have already set up the font-awesome icons and imported the required stylesheets*/
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 /* Styles for the taskbar container */
 
-*{
-  font-family: 'Quicksand', sans-serif;
+* {
+  font-family: "Quicksand", sans-serif;
 }
 
-   .taskbar {
+.taskbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -16,7 +16,7 @@
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 0px;
-} 
+}
 
 /* Styles for the taskbar buttons */
 .taskbar-button {
@@ -51,10 +51,6 @@
   font-size: 18px;
   text-transform: uppercase;
 }
-
-
-
-
 
 /* form-styles*/
 
@@ -119,7 +115,8 @@ input[type="time"] {
 .form-button:hover {
   background-color: #f0f0f0;
   transform: translateY(-3px);
-}@media (max-width: 767px) {
+}
+@media (max-width: 767px) {
   .container {
     width: 90%;
     padding: 15px;
@@ -157,12 +154,6 @@ input[type="time"] {
   }
 }
 
-
-
-
-
-
-
 /* list styles  */
 
 /* Styles for the event list container */
@@ -180,7 +171,7 @@ input[type="time"] {
 
 /* Styles for each event link */
 .event-link {
-  display: inline-block; 
+  display: inline-block;
   align-items: center;
   justify-content: space-between;
   background-color: #f0f0f0;
@@ -194,8 +185,8 @@ input[type="time"] {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
-.event-link-false{
-  display: inline-block; 
+.event-link-false {
+  display: inline-block;
   align-items: center;
   justify-content: space-between;
   background-color: #f0f0f0;
@@ -215,7 +206,7 @@ input[type="time"] {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-.event-link-false:hover{
+.event-link-false:hover {
   background-color: #800020;
   color: #ffffff;
   transform: translateY(-3px);
@@ -225,6 +216,7 @@ input[type="time"] {
 .event-p {
   margin: 0;
   padding: 0;
+  white-space: nowrap;
   flex: 1; /* Make all elements take equal space */
 }
 /*delete container one*/
@@ -233,7 +225,7 @@ input[type="time"] {
   align-items: center;
   margin-left: 10px; /* Add some space between the link and the button */
   border-radius: 50%;
-  background-color: #FF2171;
+  background-color: #ff2171;
   padding: 5px;
   margin: 0px;
   margin-bottom: 5%;
@@ -244,20 +236,20 @@ input[type="time"] {
   display: inline-block;
   align-items: center;
   justify-content: center;
-  background-color: #FCAEAE; /* Set the background color */
+  background-color: #fcaeae; /* Set the background color */
   color: #ffffff;
   border: none;
   padding: 8px 12px;
   border-radius: 50%; /* Make the button round */
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: #FCAEAE 0.3s ease, transform 0.3s ease;
+  transition: #fcaeae 0.3s ease, transform 0.3s ease;
 }
 
 .delete-btn:hover {
-  background-color: #FF6666; /* Update the hover color */
+  background-color: #ff6666; /* Update the hover color */
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px #FF6666;
+  box-shadow: 0 6px 12px #ff6666;
 }
 /* Media query for responsiveness (adjust the breakpoint as needed) */
 @media (max-width: 768px) {
@@ -266,10 +258,17 @@ input[type="time"] {
   }
 }
 
-
 /* this is the css for the table ... */
 
 /* Styles for the table container */
+
+.content{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
 .table-todo {
   text-align: center;
   margin-top: 30px;
@@ -362,7 +361,6 @@ input[type="time"] {
 
   /* Scrollable other columns on mobile */
 
-  
   /* Equal spacing for columns */
   .todo-table {
     display: grid;
@@ -370,17 +368,22 @@ input[type="time"] {
   }
 }
 
-
-#green{
-  color: #1A5D1A;
-  }
-  #blue{
-    color: navy;
-  }
-  #grey{
-    color:#3F2305
-  }
-  #red{
-    color: crimson;
-  }
-  
+#green {
+  color: #1a5d1a;
+}
+#blue {
+  color: navy;
+}
+#grey {
+  color: #3f2305;
+}
+#red {
+  color: crimson;
+}
+/* Calendar */
+#redish{
+background: #CAEDFF;
+}
+#piniksh{
+  background: #FFB7B7;
+}

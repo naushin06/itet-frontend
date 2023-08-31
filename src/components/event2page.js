@@ -62,7 +62,7 @@ return (
         state={{ event: data }}
         key={index}
       >
-        <p className='event-p'>{data.name} (Trainer: {data.tname}) {someVariable}</p>
+        <p className='event-p'>{data.name}(Trainer: {data.tname})</p>
       </Link>
       <div className='delete-container'>
         <button className='delete-btn' onClick={() => deleteHandler(id)}>
